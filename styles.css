@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 50%, #ffd700 100%);
+    min-height: 80vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    font-size: 1.94em;
+    color: #ff6b35;
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.question-card {
+    background: #fffaf5;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.question-card h3 {
+    font-size: 1.14em;
+    color: #333;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.option {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.option:hover {
+    border-color: #ff6b35;
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+}
+
+.option.selected {
+    border-color: #ff6b35;
+    background: #fff4e6;
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.option input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #ff6b35;
+}
+
+.option label {
+    cursor: pointer;
+    flex: 1;
+    font-size: 0.94em;
+    color: #333;
+    font-weight: 500;
+}
+
+.option-description {
+    font-size: 0.84em;
+    color: #666;
+    margin-top: 5px;
+    font-weight: normal;
+}
+
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 15px;
+}
+
+.btn {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.94em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+}
+
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#submitBtn {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1.04em;
+    padding: 16px;
+}
+
+.btn-secondary {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+.btn-secondary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.result-container {
+    text-align: center;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.result-card {
+    background: white;
+    color: #333;
+    border-radius: 15px;
+    padding: 35px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
+    border: 2px solid #ff6b35;
+}
+
+
+.result-card .architecture-type {
+    font-size: 1.14em;
+    margin-bottom: 25px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.result-card .description {
+    font-size: 1.04em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.result-card .characteristics {
+    text-align: left;
+    margin-top: 25px;
+    background: #fffaf5;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ffe0cc;
+}
+
+.result-card .characteristics h4 {
+    margin-bottom: 15px;
+    font-size: 1.14em;
+    color: #ff6b35;
+}
+
+.result-card .characteristics ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.result-card .characteristics li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #333;
+}
+
+.result-card .characteristics li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    color: #ff6b35;
+}
+
+#restartBtn {
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .question-card {
+        padding: 20px;
+    }
+
+    .result-card {
+        padding: 25px;
+    }
+
+    .navigation-buttons {
+        flex-direction: column;
+    }
+}
+
